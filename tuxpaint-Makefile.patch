@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Oct  5 12:12:15 2002
++++ Makefile	Sat Oct  5 12:12:04 2002
+@@ -11,7 +11,7 @@
+ 
+ # Where to install things:
+ 
+-PREFIX=/usr/local
++PREFIX=$(_prefix)
+ 
+ 
+ # Program:
