@@ -41,7 +41,7 @@ wska¼nik myszki oraz przyciski utrzymane w stylu komiksowym.
 Summary:	Tux Paint - Collection of "rubber stamp" images
 Summary(pl):	Tux Paint - Kolekcja obrazów z "gumowej piecz±tki"
 Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description stamps
 This is a collection of "rubber stamp" images for Tux Paint.
