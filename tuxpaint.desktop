@@ -5,4 +5,4 @@ Comment[pl]=Tux Paint - Prosty program do rysowania dla dzieci
 Exec=tuxpaint
 Icon=tuxpaint.png
 Type=Application
-Terminal=0
+Terminal=false
