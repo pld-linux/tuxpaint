@@ -1,4 +1,4 @@
-%define		stamps_ver	2003.12.23
+%define		stamps_ver	2004-10-03
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
@@ -10,8 +10,7 @@ Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
 # Source0-md5:	0b7522c1b3672d5c233f7bbc772c8dec
 Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
-# Source1-md5:	701fb126d9956ed113935bb0e1016a59
-Source2:	%{name}.desktop
+# Source1-md5:	acb764a25d82843626ff0c1e9ed5da8d
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-opt.patch
 Patch2:		%{name}-vfolders.patch
@@ -55,9 +54,6 @@ Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
 %patch0 -p0
 #%patch1 -p1
 %patch2 -p1
-
-# They already have desktop file. Why don't we just patch it?
-#install %{SOURCE2} src
 
 %build
 %{__make} \
@@ -117,6 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/fonts
 %{_datadir}/%{name}/images
 %{_datadir}/%{name}/sounds
+%{_datadir}/%{name}/starters
 %{_desktopdir}/*
 %{_pixmapsdir}/*
 
