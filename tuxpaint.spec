@@ -8,7 +8,9 @@ Epoch:		1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	4d1136e2ed30795a20b376f62dd333c3
 Source1:	http://dl.sourceforge.net/%{name}/%{name}-stamps-%{stamps_ver}.tar.gz
+# Source1-md5:	2e226d414fbabd956079459540d1df29
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-opt.patch
