@@ -36,7 +36,7 @@ komiksowym.
 
 %package stamps
 Summary:	Tux Paint - Collection of "rubber stamp" images.
-Summary(pl):	Tux Paint - Kolekcja obrazów ze "gumowej piecz±tki".
+Summary(pl):	Tux Paint - Kolekcja obrazów z "gumowej piecz±tki".
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}
 
