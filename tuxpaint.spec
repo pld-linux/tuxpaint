@@ -18,7 +18,7 @@ URL:		http://www.newbreedsoftware.com/tuxpaint/
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.5
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
 
