@@ -7,4 +7,5 @@ Exec=tuxpaint
 Icon=tuxpaint.png
 Type=Application
 Terminal=false
+Categories=Graphics;
 # vi: encoding=utf-8
