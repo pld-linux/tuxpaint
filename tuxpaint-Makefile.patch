@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct  5 12:12:15 2002
-+++ Makefile	Sat Oct  5 12:12:04 2002
+--- Makefile.orig	Sat Sep 28 20:20:19 2002
++++ Makefile	Sat Oct  5 14:43:02 2002
 @@ -11,7 +11,7 @@
  
  # Where to install things:
@@ -9,3 +9,12 @@
  
  
  # Program:
+@@ -45,7 +45,7 @@
+ X11_ICON_PREFIX=$(PREFIX)/X11R6/include/X11/pixmaps/
+ GNOME_PREFIX=$(PREFIX)/share/gnome/apps/Graphics/
+ KDE_PREFIX=$(PREFIX)/share/applnk/Graphics/
+-KDE_ICON_PREFIX=`kde-config --install icon`
++# KDE_ICON_PREFIX=`kde-config --install icon`
+ 
+ 
+ # Locale files
