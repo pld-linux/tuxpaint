@@ -7,7 +7,7 @@ License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{name}/stamps/%{name}-stamps-%{version}.tar.gz
-Source2:	tuxpaint.desktop
+Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.newbreedsoftware.com/tuxpaint/
 BuildRequires:	SDL_image-devel >= 1.2.2
@@ -16,6 +16,7 @@ BuildRequires:	SDL_ttf-devel >= 2.0.5
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_sysconfdir	/etc/X11
 
 %description
 Tux Paint is a simple drawing program for young children (3-10 years
@@ -45,40 +46,38 @@ This is a collection of "rubber stamp" images for Tux Paint.
 Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
 
 %prep
-%setup -q
+%setup -q -a 1
 %patch0 -p0
+
+install %{SOURCE2} src
 
 %build
 %{__make} CC=%{__cc} \
 	PREFIX=%{_prefix}/ \
-	CONFDIR=%{_sysconfdir}/tuxpaint/ \
+	CONFDIR=%{_sysconfdir}/ \
 	DATA_PREFIX=%{_datadir}/tuxpaint/ \
 	DOC_PREFIX=%{_datadir}/doc/ \
-	MAN_PREFIX=%{_mandir}/ \
-	ICON_PREFIX=%{_datadir}/pixmaps/ \
-	X11_ICON_PREFIX=%{_datadir}/pixmaps/ \
-	GNOME_PREFIX=%{_applnkdir}/Graphics/ \
-	KDE_PREFIX=%{_applnkdir}/Graphics/ \
-	LOCALE_PREFIX=%{_datadir}/locale/ \
-	RPM_OPT_FLAGS="%{rpmcflags}"
+	ICON_PREFIX=%{_pixmapadir}/ \
+	X11_ICON_PREFIX=%{_pixmapadir}/ \
+	LOCALE_PREFIX=%{_datadir}/locale
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_applnkdir}/Graphics,%{_datadir}/%{name}/stamps}
 
-%{__make} _prefix=$RPM_BUILD_ROOT%{_prefix} install
+%{__make} install \
+	_prefix=$RPM_BUILD_ROOT%{_prefix}/ \
+	CONFDIR=$RPM_BUILD_ROOT%{_sysconfdir}/ \
+	MAN_PREFIX=$RPM_BUILD_ROOT%{_mandir}/ \
+	GNOME_PREFIX=$RPM_BUILD_ROOT%{_applnkdir}/Graphics/ \
+	KDE_PREFIX=$RPM_BUILD_ROOT%{_applnkdir}/Graphics/ \
+	X11_ICON_PREFIX=$RPM_BUILD_ROOT%{_pixmapsdir}/
 
-install src/tuxpaint.conf $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
-install data/images/icon32x32.xpm $RPM_BUILD_ROOT%{_datadir}/pixmaps/tuxpaint.xpm
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
+install src/tuxpaint.conf $RPM_BUILD_ROOT%{_sysconfdir}
+install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 
-tar zxf %{SOURCE1}
-cd %{name}-stamps-%{version}
-cd stamps
-cp -rf cartoon $RPM_BUILD_ROOT%{_datadir}/%{name}/stamps/
-cp -rf misc $RPM_BUILD_ROOT%{_datadir}/%{name}/stamps/
-cp -rf photo $RPM_BUILD_ROOT%{_datadir}/%{name}/stamps/
-cd ../..
+%{__make} -C %{name}-stamps-%{version} install \
+	DATA_PREFIX=$RPM_BUILD_ROOT%{_datadir}/%{name}/
 
 %find_lang %{name}
 
@@ -87,16 +86,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc docs
+%doc docs/*
 %attr(755,root,root) %{_bindir}/*
-%{_sysconfdir}/%{name}
-%{_applnkdir}/*
-%{_pixmapsdir}/*
+%{_sysconfdir}/tuxpaint.conf
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/brushes
 %{_datadir}/%{name}/fonts
 %{_datadir}/%{name}/images
 %{_datadir}/%{name}/sounds
+%{_applnkdir}/Graphics/*
+%{_pixmapsdir}/*
 
 %files stamps
 %defattr(644,root,root,755)
