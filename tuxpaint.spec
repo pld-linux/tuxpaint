@@ -3,7 +3,7 @@ Summary:	Tux Paint - A simple drawing program for children
 Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	0.9.13
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Graphics
@@ -69,14 +69,14 @@ install %{SOURCE2} src
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_applnkdir}/Graphics,%{_datadir}/%{name}/stamps}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_desktopdir},%{_datadir}/%{name}/stamps}
 
 %{__make} install \
 	_prefix=$RPM_BUILD_ROOT%{_prefix}/ \
 	CONFDIR=$RPM_BUILD_ROOT%{_sysconfdir}/ \
 	MAN_PREFIX=$RPM_BUILD_ROOT%{_mandir}/ \
 	GNOME_PREFIX=$RPM_BUILD_ROOT%{_prefix}/ \
-	KDE_PREFIX=$RPM_BUILD_ROOT%{_applnkdir}/ \
+	KDE_PREFIX=$RPM_BUILD_ROOT%{_desktopdir}/ \
 	X11_ICON_PREFIX=$RPM_BUILD_ROOT%{_pixmapsdir}/
 
 install src/tuxpaint.conf $RPM_BUILD_ROOT%{_sysconfdir}
@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/fonts
 %{_datadir}/%{name}/images
 %{_datadir}/%{name}/sounds
-%{_applnkdir}/Graphics/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
 
 %files stamps
