@@ -3,7 +3,7 @@ Summary:	Tux Paint - A simple drawing program for children
 Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	0.9.9
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Graphics
@@ -68,6 +68,7 @@ install %{SOURCE2} src
 	OPTFLAGS="%{rpmcflags}"
 
 %install
+chmod -R u+rwX $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_applnkdir}/Graphics,%{_datadir}/%{name}/stamps}
 
@@ -88,6 +89,7 @@ install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 %find_lang %{name}
 
 %clean
+chmod -R a+rwX $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
