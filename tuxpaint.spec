@@ -92,6 +92,14 @@ install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 chmod -R a+rwx $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT/usr/share/{doc/tuxpaint,gnome/apps,tuxpaint/CVS}
 
+#rm a lot of unwanted files and directories:
+find docs/ -type d|grep CVS|xargs rm -rf
+find docs/ -name "[KC]OP*" -exec rm -f "{}" ";"
+find docs/ -name "INS*" -exec rm -f "{}" ";"
+find docs/ -name "AUT*" -exec rm -f "{}" ";"
+find docs/ -size -50c -type f -exec rm -f "{}" ";"
+find docs/ -empty |xargs rm -rf
+
 %find_lang %{name}
 
 %clean
