@@ -7,8 +7,9 @@ License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{name}/stamps/%{name}-stamps-%{version}.tar.gz
-URL:		http://www.newbreedsoftware.com/tuxpaint/
+Source2:	tuxpaint.desktop
 Patch0:		%{name}-Makefile.patch
+URL:		http://www.newbreedsoftware.com/tuxpaint/
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_ttf-devel >= 2.0.5
 BuildRequires:	SDL_mixer-devel >= 1.2.4
@@ -69,15 +70,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_datadir}/pixmaps
 %{__make} _prefix=$RPM_BUILD_ROOT%{_prefix} install
 cp src/tuxpaint.conf $RPM_BUILD_ROOT%{_sysconfdir}/%{name}/
 cp data/images/icon32x32.xpm $RPM_BUILD_ROOT%{_datadir}/pixmaps/tuxpaint.xpm
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Graphics/tuxpaint.desktop << EOF
-[Desktop Entry]
-Name=Tux Paint
-Type=Application
-Exec=tuxpaint
-Icon=tuxpaint.png
-Comment=Tux Paint drawing program for children.
-Terminal=0
-EOF
+cp %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/
 
 tar zxf %{SOURCE1}
 cd %{name}-stamps-%{version}
