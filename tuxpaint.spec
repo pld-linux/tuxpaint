@@ -68,7 +68,6 @@ install %{SOURCE2} src
 	OPTFLAGS="%{rpmcflags}"
 
 %install
-chmod -R u+rwX $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_applnkdir}/Graphics,%{_datadir}/%{name}/stamps}
 
