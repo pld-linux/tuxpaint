@@ -62,8 +62,8 @@ install %{SOURCE2} src
 	CONFDIR=%{_sysconfdir}/ \
 	DATA_PREFIX=%{_datadir}/tuxpaint/ \
 	DOC_PREFIX=%{_datadir}/doc/ \
-	ICON_PREFIX=%{_pixmapadir}/ \
-	X11_ICON_PREFIX=%{_pixmapadir}/ \
+	ICON_PREFIX=%{_pixmapsdir}/ \
+	X11_ICON_PREFIX=%{_pixmapsdir}/ \
 	LOCALE_PREFIX=%{_datadir}/locale \
 	OPTFLAGS="%{rpmcflags}"
 
@@ -75,14 +75,14 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_a
 	_prefix=$RPM_BUILD_ROOT%{_prefix}/ \
 	CONFDIR=$RPM_BUILD_ROOT%{_sysconfdir}/ \
 	MAN_PREFIX=$RPM_BUILD_ROOT%{_mandir}/ \
-	GNOME_PREFIX=$RPM_BUILD_ROOT%{_applnkdir}/Graphics/ \
-	KDE_PREFIX=$RPM_BUILD_ROOT%{_applnkdir}/Graphics/ \
+	GNOME_PREFIX=$RPM_BUILD_ROOT%{_prefix}/ \
+	KDE_PREFIX=$RPM_BUILD_ROOT%{_applnkdir}/ \
 	X11_ICON_PREFIX=$RPM_BUILD_ROOT%{_pixmapsdir}/
 
 install src/tuxpaint.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 
-%{__make} -C %{name}-stamps-%{version} install \
+%{__make} -C %{name}-stamps-%{stamps_ver} install \
 	DATA_PREFIX=$RPM_BUILD_ROOT%{_datadir}/%{name}/
 
 %find_lang %{name}
@@ -94,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/*
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man?/*
 %{_sysconfdir}/tuxpaint.conf
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/brushes
