@@ -31,7 +31,7 @@ jest rozumiany jako narzêdzie s³u±¿ce ogolnemu celowi nauki rysowania,
 lecz jest rozumiany jako program ³atwy w u¿yciu, s³u¿±cy zabawie.
 Efekty dzwiêkowe i komiksowy charakter pomagaj± u¿ytkownikowi w ³atwym
 poruszaniu siê w programie, tworz±c go rozrywkowym. W programie jest
-tak¿e du¿y wska¼nik myszki oraz przyciski, utrzymane w stylu
+tak¿e du¿y wska¼nik myszki oraz przyciski utrzymane w stylu 
 komiksowym.
 
 %package stamps
