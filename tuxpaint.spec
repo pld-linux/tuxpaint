@@ -1,12 +1,13 @@
+%define		stamps_ver	2003.01.28
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
-Version:	2002.09.29
-Release:	2
+Version:	0.9.9
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-%{version}.tar.gz
-Source1:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{name}/stamps/%{name}-stamps-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source1:	http://dl.sourceforge.net/%{name}/%{name}-stamps-%{stamps_ver}.tar.gz
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-opt.patch
