@@ -1,0 +1,49 @@
+diff -burN tuxpaint-0.9.13.orig/Makefile tuxpaint-0.9.13/Makefile
+--- tuxpaint-0.9.13.orig/Makefile	2004-07-05 22:00:33.498513104 +0200
++++ tuxpaint-0.9.13/Makefile	2004-07-05 21:59:26.876641168 +0200
+@@ -198,7 +198,7 @@
+ 	  rm /usr/share/pixmaps/tuxpaint.png; \
+ 	fi
+ 	-if [ "x$(KDE_PREFIX)" != "x" ]; then \
+-	  rm $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
++	  rm $(KDE_PREFIX)/tuxpaint.desktop; \
+ 	fi
+ 	-rm $(ICON_PREFIX)tuxpaint.png
+ 	-rm $(X11_ICON_PREFIX)tuxpaint.xpm
+@@ -285,8 +285,8 @@
+ 	@echo
+ 	@echo "...Installing launcher icon into KDE..."
+ 	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
+-	  cp src/tuxpaint.desktop $(KDE_PREFIX)/Graphics/; \
+-	  chmod 644 $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
++	  cp src/tuxpaint.desktop $(KDE_PREFIX); \
++	  chmod 644 $(KDE_PREFIX)/tuxpaint.desktop; \
+ 	fi
+ 
+ 
+diff -burN tuxpaint-0.9.13.orig/src/tuxpaint.desktop tuxpaint-0.9.13/src/tuxpaint.desktop
+--- tuxpaint-0.9.13.orig/src/tuxpaint.desktop	2004-07-05 21:58:08.313584568 +0200
++++ tuxpaint-0.9.13/src/tuxpaint.desktop	2004-07-05 22:02:14.803112464 +0200
+@@ -3,7 +3,7 @@
+ Type=Application
+ Exec=tuxpaint
+ Icon=tuxpaint.png
+-Terminal=0
++Terminal=false
+ Comment=Tux Paint: a drawing program for children.
+ Comment[ca]=Tux Paint: un programa de dibuix per a nens petits.
+ #Comment[cz]=
+@@ -21,9 +21,12 @@
+ #Comment[ko]=
+ Comment[nl]=Tux Paint: een tekenprogramma voor kinderen.
+ Comment[nn]=Tux Paint: eit teikneprogram for dei yngste.
+-#Comment[pl]=
++Comment[pl]=Tux Paint: prosty program do rysowania dla dzieci
+ Comment[pt]=Tux Paint: um programa de desenho para crianças.
+ #Comment[ro]=
+ Comment[sv]=Tux Paint: ett ritprogram för yngre barn.
+ #Comment[tr]=
+ #Comment[zh]=
++Categories=Graphics;
++Encoding=UTF-8
++# vi: set encoding=utf-8
