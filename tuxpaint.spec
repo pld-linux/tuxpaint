@@ -7,18 +7,20 @@ Summary:	Tux Paint - A simple drawing program for children.
 Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci.
 Name:		tuxpaint
 Version:	2002.09.29
-Release:	0.1
+Release:	0.2
 Copyright:	GPL
 Group:		Graphics
 Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-%{version}.tar.gz
+#Source1:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-stamps-{version}.tar.gz
 URL:		http://www.newbreedsoftware.com/tuxpaint/
+Patch0:		%{name}-Makefile.patch
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_ttf-devel >= 2.0.5
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 #Requires:	
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_prefix	/usr
+%define _prefix /usr/X11R6
 
 %description
 Tux Paint is a simple drawing program for young children (3-10 years old).
@@ -37,8 +39,7 @@ du¿y wska¼nik myszki, utrzymany w stulu komiksowym
 		   
 %prep
 %setup -q
-
-#%patch
+%patch0 -p0
 
 %build
 #./configure --prefix=%{_prefix}
@@ -47,27 +48,33 @@ du¿y wska¼nik myszki, utrzymany w stulu komiksowym
 %{__make} CC=gcc \
 PREFIX=/usr/X11R6/ \
 CONFDIR=/etc/tuxpaint/ \
-DATA_PREFIX=/usr/share/tuxpaint/ \
-DOC_PREFIX=/usr/share/doc/ \
+DATA_PREFIX=/usr/X11R6/share/tuxpaint/ \
+DOC_PREFIX=/usr/X11R6/share/doc/ \
 MAN_PREFIX=/usr/share/man/ \
-ICON_PREFIX=/usr/share/pixmaps/ \
-X11_ICON_PREFIX=/usr/X11R6/include/X11/pixmaps/ \
-GNOME_PREFIX=/usr/X11R6/share/gnome/apps/Graphisc/ \
+ICON_PREFIX=/usr/X11R6/share/pixmaps/ \
+X11_ICON_PREFIX=/usr/X11R6/share/pixmaps/ \
+GNOME_PREFIX=/usr/X11R6/share/applnk/Graphics/ \
 KDE_PREFIX=/usr/X11R6/share/applnk/Graphics/ \
-LOCALE_PREFIX=/usr/share/locale/ \
+LOCALE_PREFIX=/usr/X11R6/share/locale/ \
 RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
-
-%post
-%postun
+install -d $RPM_BUILD_ROOT{%{_prefix}/bin,/etc/%{name},%{_datadir}/pixmaps,%{_datadir}/applnk/Graphics}
+%{__make} _prefix=$RPM_BUILD_ROOT%{_prefix} install
+cp src/tuxpaint.conf $RPM_BUILD_ROOT/etc/%{name}/
+cp data/images/icon32x32.xpm $RPM_BUILD_ROOT%{_datadir}/pixmaps/tuxpaint.xpm
+cp src/tuxpaint.desktop $RPM_BUILD_ROOT/%{_datadir}/applnk/Graphics/
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc
-%attr(,,)
+%doc docs/
+%attr(755,root,root)%{_prefix}/bin
+/etc/%{name}
+%{_datadir}/applnk
+%{_datadir}/pixmaps
+%{_datadir}/locale
+%{_datadir}/%{name}
