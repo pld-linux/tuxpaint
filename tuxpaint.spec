@@ -78,6 +78,7 @@ cd stamps
 cp -rf cartoon $RPM_BUILD_ROOT%{_datadir}/%{name}/stamps/
 cp -rf misc $RPM_BUILD_ROOT%{_datadir}/%{name}/stamps/
 cp -rf photo $RPM_BUILD_ROOT%{_datadir}/%{name}/stamps/
+cd ../..
 
 %find_lang %{name}
 
