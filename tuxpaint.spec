@@ -2,13 +2,14 @@ Summary:	Tux Paint - A simple drawing program for children
 Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	2002.09.29
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{name}/stamps/%{name}-stamps-%{version}.tar.gz
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-opt.patch
 URL:		http://www.newbreedsoftware.com/tuxpaint/
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_mixer-devel >= 1.2.4
@@ -48,6 +49,7 @@ Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
 %prep
 %setup -q -a 1
 %patch0 -p0
+%patch1 -p1
 
 install %{SOURCE2} src
 
@@ -59,7 +61,8 @@ install %{SOURCE2} src
 	DOC_PREFIX=%{_datadir}/doc/ \
 	ICON_PREFIX=%{_pixmapadir}/ \
 	X11_ICON_PREFIX=%{_pixmapadir}/ \
-	LOCALE_PREFIX=%{_datadir}/locale
+	LOCALE_PREFIX=%{_datadir}/locale \
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
