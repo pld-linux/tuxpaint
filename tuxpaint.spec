@@ -4,8 +4,7 @@ Name:		tuxpaint
 Version:	2002.09.29
 Release:	1
 License:	GPL
-Group:		Graphics
-######		Unknown group!
+Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{version}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.sonic.net/pub/users/nbs/unix/x/%{name}/stamps/%{name}-stamps-%{version}.tar.gz
 URL:		http://www.newbreedsoftware.com/tuxpaint/
@@ -37,8 +36,7 @@ komiksowym.
 %package stamps
 Summary:	Tux Paint - Collection of "rubber stamp" images.
 Summary(pl):	Tux Paint - Kolekcja obrazów ze "gumowej piecz±tki".
-Group:		Graphics
-######		Unknown group!
+Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}
 
 %description stamps
