@@ -14,6 +14,7 @@ Source1:	http://dl.sourceforge.net/%{name}/%{name}-stamps-%{stamps_ver}.tar.gz
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-opt.patch
+Patch2:		%{name}-vfolders.patch
 URL:		http://www.newbreedsoftware.com/tuxpaint/
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_mixer-devel >= 1.2.4
@@ -53,11 +54,14 @@ Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
 %setup -q -a 1
 %patch0 -p0
 #%patch1 -p1
+%patch2 -p1
 
-install %{SOURCE2} src
+# They already have desktop file. Why don't we just patch it?
+#install %{SOURCE2} src
 
 %build
-%{__make} CC=%{__cc} \
+%{__make} \
+	CC=%{__cc} \
 	PREFIX=%{_prefix}/ \
 	CONFDIR=%{_sysconfdir}/ \
 	DATA_PREFIX=%{_datadir}/tuxpaint/ \
@@ -85,10 +89,12 @@ install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 %{__make} -C %{name}-stamps-%{stamps_ver} install \
 	DATA_PREFIX=$RPM_BUILD_ROOT%{_datadir}/%{name}/
 
+chmod -R a+rwx $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT/usr/share/{doc/tuxpaint,gnome/apps,tuxpaint/CVS}
+
 %find_lang %{name}
 
 %clean
-chmod -R a+rwX $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
