@@ -7,9 +7,9 @@ Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
 # Source0-md5:	580ed290af35c34a33f2206f7f36e489
-Source1:	http://dl.sourceforge.net/%{name}/%{name}-stamps-%{stamps_ver}.tar.gz
+Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
 # Source1-md5:	701fb126d9956ed113935bb0e1016a59
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
@@ -42,7 +42,7 @@ wska¼nik myszki oraz przyciski utrzymane w stylu komiksowym.
 Summary:	Tux Paint - Collection of "rubber stamp" images
 Summary(pl):	Tux Paint - Kolekcja obrazów z "gumowej piecz±tki"
 Group:		X11/Applications/Graphics
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description stamps
 This is a collection of "rubber stamp" images for Tux Paint.
@@ -61,7 +61,7 @@ Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
 
 %build
 %{__make} \
-	CC=%{__cc} \
+	CC="%{__cc}" \
 	PREFIX=%{_prefix}/ \
 	CONFDIR=%{_sysconfdir}/ \
 	DATA_PREFIX=%{_datadir}/tuxpaint/ \
