@@ -79,7 +79,7 @@
  msgid "Silver!"
  msgstr "Srebrny!"
  
-@@ -138,55 +122,44 @@
+@@ -138,29 +122,23 @@
  msgid "You can draw in rainbow colors!"
  msgstr "Możesz rysować w kolorach tęczy!"
  
@@ -111,11 +111,7 @@
  msgid "Click and move the mouse around to draw a negative."
  msgstr "Kliknij i przesuń myszką dookoła, aby narysować negatyw."
  
- msgid "Click and move to fade the colors."
- msgstr "Kliknij i przesuń myszką, aby kolory zbladły."
- 
--msgid ""
- "Click and move the mouse around to turn the picture into a chalk drawing."
+@@ -172,21 +150,17 @@
  msgstr ""
  "Kliknij i przesuń myszką dookoła, aby zamienić obrazek w rysunek kredą."
  
