@@ -50,8 +50,9 @@ diff -burN tuxpaint-0.9.14.orig/src/tuxpaint.desktop tuxpaint-0.9.14/src/tuxpain
  Comment[pt_br]=Um programa de desenho para crianças.
  Comment[pt_pt]=Um programa de desenho para crianças.
  Comment[ru]=Детская программа для рисования.
-@@ -96,3 +99,4 @@
+@@ -96,3 +99,5 @@
  Comment[wa]=Programe di dessinaedje po ls efants
  Comment[zh_cn]=孩子的绘图程序。
  Comment[zh_tw]=一個兒童專用的畫圖程式。
++Categories=Education;Art;
 +# vi: set encoding=utf-8
