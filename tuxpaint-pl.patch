@@ -1,0 +1,216 @@
+--- tuxpaint-0.9.14/src/po/pl.po.orig	2004-11-18 16:26:10.000000000 +0100
++++ tuxpaint-0.9.14/src/po/pl.po	2004-11-18 16:36:19.000000000 +0100
+@@ -15,72 +15,56 @@
+ "X-Generator: KBabel 0.9.6\n"
+ 
+ msgid "A drawing program for children."
+-msgstr ""
++msgstr "Program do rysowania dla dzieci"
+ 
+ msgid "Drawing program"
+-msgstr ""
++msgstr "Program do rysowania"
+ 
+-#, fuzzy
+ msgid "Tux Paint"
+-msgstr "Rysuj"
++msgstr ""
+ 
+-#, fuzzy
+ msgid "Black!"
+ msgstr "Czarny!"
+ 
+-#, fuzzy
+ msgid "White!"
+ msgstr "Biały!"
+ 
+-#, fuzzy
+ msgid "Red!"
+-msgstr "Ponów!"
++msgstr "Czerwony!"
+ 
+-#, fuzzy
+ msgid "Pink!"
+ msgstr "Różowy!"
+ 
+-#, fuzzy
+ msgid "Orange!"
+ msgstr "Pomarańczowy!"
+ 
+-#, fuzzy
+ msgid "Yellow!"
+ msgstr "Żółty!"
+ 
+-#, fuzzy
+ msgid "Lime!"
+ msgstr "Seledyn!"
+ 
+-#, fuzzy
+ msgid "Green!"
+ msgstr "Zielony!"
+ 
+-#, fuzzy
+ msgid "Cyan!"
+-msgstr "Cyan!"
++msgstr "Turkusowy!"
+ 
+-#, fuzzy
+ msgid "Blue!"
+ msgstr "Niebieski!"
+ 
+-#, fuzzy
+ msgid "Purple!"
+ msgstr "Purpurowy!"
+ 
+-#, fuzzy
+ msgid "Fuchsia!"
+ msgstr "Lila!"
+ 
+-#, fuzzy
+ msgid "Brown!"
+ msgstr "Brązowy!"
+ 
+-#, fuzzy
+ msgid "Gray!"
+-msgstr "Wspaniale!"
++msgstr "Szary!"
+ 
+-#, fuzzy
+ msgid "Silver!"
+ msgstr "Srebrny!"
+ 
+@@ -138,55 +122,44 @@
+ msgid "You can draw in rainbow colors!"
+ msgstr "Możesz rysować w kolorach tęczy!"
+ 
+-#, fuzzy
+ msgid "Click and move to draw sparkles."
+ msgstr "Kliknij i przesuń, aby narysować iskierki."
+ 
+-#, fuzzy
+ msgid "Click to make a mirror image."
+-msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku!"
++msgstr "Kliknij, aby zrobić odbicie obrazka jak w lusterku."
+ 
+-#, fuzzy
+ msgid "Click to flip the picture upside-down."
+-msgstr "Kliknij, aby odwrócić obrazek do góry nogami!"
++msgstr "Kliknij, aby odwrócić obrazek do góry nogami."
+ 
+-#, fuzzy
+ msgid "Click and move the mouse around to blur the picture."
+ msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
+ 
+-#, fuzzy
+ msgid "Click and move the mouse around to make the picture blocky."
+ msgstr ""
+ "Kliknij i przesuń myszką dookoła, aby obrazek wyglądał jak zrobiony z "
+ "kwadracików."
+ 
+-#, fuzzy
+ msgid "Click and move the mouse around to draw a negative."
+ msgstr "Kliknij i przesuń myszką dookoła, aby narysować negatyw."
+ 
+ msgid "Click and move to fade the colors."
+ msgstr "Kliknij i przesuń myszką, aby kolory zbladły."
+ 
+-msgid ""
+ "Click and move the mouse around to turn the picture into a chalk drawing."
+ msgstr ""
+ "Kliknij i przesuń myszką dookoła, aby zamienić obrazek w rysunek kredą."
+ 
+-#, fuzzy
+ msgid "Click and move the mouse around to make the picture drip."
+-msgstr "Kliknij i przesuń myszką dookoła, aby obraz zaczął ociekać kroplami!"
++msgstr "Kliknij i przesuń myszką dookoła, aby obraz zaczął ociekać kroplami."
+ 
+-#, fuzzy
+ msgid "Click and move the mouse to thicken the picture."
+-msgstr "Kliknij i przesuń myszkę, aby pogrubić obrazek"
++msgstr "Kliknij i przesuń myszkę, aby pogrubić obrazek."
+ 
+-#, fuzzy
+ msgid "Click and move the mouse to thin the picture."
+-msgstr "Kliknij i przesuń myszkę, aby zwęzić obrazek"
++msgstr "Kliknij i przesuń myszkę, aby zwęzić obrazek."
+ 
+-#, fuzzy
+ msgid "Click in the picture to fill that area with color."
+-msgstr "Kliknij na obrazek, aby wypełnić wskazany obszar kolorem"
++msgstr "Kliknij na obrazek, aby wypełnić wskazany obszar kolorem."
+ 
+ msgid "Square"
+ msgstr "Kwadrat"
+@@ -291,11 +264,9 @@
+ msgid "Pick a picture to stamp around your drawing."
+ msgstr "Wybierz obrazek, aby opieczętować swój rysunek."
+ 
+-#, fuzzy
+ msgid "Click to start drawing a line. Let go to complete it."
+ msgstr "Kliknij, aby rozpocząć rysowanie linii. Puść, aby je zakończyć."
+ 
+-#, fuzzy
+ msgid ""
+ "Pick a shape. Click to pick the center, drag, then let go when it is the "
+ "size you want. Move around to rotate it, and click to draw it."
+@@ -303,7 +274,6 @@
+ "Wybierz kształt. Kliknij, gdzie ma być środek, ciągnij aż wielkość będzie "
+ "dobra. Ruszaj myszką, aby obrócić, kliknij, aby narysować."
+ 
+-#, fuzzy
+ msgid "Choose a style of text. Click on your drawing and you can start typing."
+ msgstr "Wybierz styl tekstu. Kliknij na rysunek i rozpocznij pisanie."
+ 
+@@ -380,20 +350,17 @@
+ msgid "Starting a new picture will erase the current one!"
+ msgstr "Rozpoczęcie nowego obrazka spowoduje usunięcie bieżącego!"
+ 
+-#, fuzzy
+ msgid "That’s OK!"
+-msgstr "OK, w porządku"
++msgstr "OK, w porządku!"
+ 
+-#, fuzzy
+ msgid "Never mind!"
+ msgstr "Nigdy w życiu!"
+ 
+ msgid "There are no saved files!"
+ msgstr "Brak zapisanych plików!"
+ 
+-#, fuzzy
+ msgid "Print your picture now?"
+-msgstr "Czy chcesz najpierw zapisać swój obrazek?"
++msgstr "Czy chcesz teraz wydrukować obrazek?"
+ 
+ msgid "Your picture has been printed!"
+ msgstr "Twój obrazek został wydrukowany!"
+@@ -413,29 +380,11 @@
+ msgstr "Wróć"
+ 
+ #. FIXME: Move elsewhere!!!
+-#, fuzzy
+ msgid "Save over the older version of this picture?"
+ msgstr "Czy nadpisać starszą wersję tego obrazka?"
+ 
+ msgid "No, save a new file"
+ msgstr "Nie, zapisz nowy plik"
+ 
+-#, fuzzy
+ msgid "Choose the picture you want, then click “Open”."
+ msgstr "Wybierz obrazek, a potem kliknij 'Otwórz'"
+-
+-#~ msgid "Okay"
+-#~ msgstr "OK"
+-
+-#~ msgid "Red"
+-#~ msgstr "Czerwony!"
+-
+-#~ msgid "Grey"
+-#~ msgstr "Szary!"
+-
+-#~ msgid ""
+-#~ "Pick a shape to draw.  Click once to pick the center of the shape, click "
+-#~ "again to draw it."
+-#~ msgstr ""
+-#~ "Wybierz kształt do narysowania. Kliknij raz wewnątrz kształtu, kliknij "
+-#~ "ponownie aby go narysować."
