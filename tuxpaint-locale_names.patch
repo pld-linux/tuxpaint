@@ -83,7 +83,7 @@
  Comment[es]=Un programa de dibujo para niños.
  Comment[eu]=Umeentzako marrazketa programa
  Comment[fi]=Piirto-ohjelma pienille lapsille.
-@@ -89,14 +89,14 @@
+@@ -89,15 +89,15 @@
  Comment[nl]=Een tekenprogramma voor kinderen.
  Comment[nn]=Eit teikneprogram for dei yngste.
  Comment[pl]=Tux Paint: prosty program do rysowania dla dzieci.
@@ -101,4 +101,5 @@
 -Comment[zh_tw]=一個兒童專用的畫圖程式。
 +Comment[zh_CN]=孩子的绘图程序。
 +Comment[zh_TW]=一個兒童專用的畫圖程式。
+ Categories=Education;Art;
  # vi: set encoding=utf-8
