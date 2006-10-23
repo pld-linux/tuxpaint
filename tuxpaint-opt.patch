@@ -1,11 +1,11 @@
---- tuxpaint-2002.09.29/Makefile.orig	Fri Oct 11 09:37:07 2002
-+++ tuxpaint-2002.09.29/Makefile	Fri Oct 11 09:38:11 2002
-@@ -68,7 +68,7 @@
- 
+--- tuxpaint-0.9.16/Makefile~	2006-10-23 20:58:03.000000000 +0200
++++ tuxpaint-0.9.16/Makefile	2006-10-23 21:00:44.000000000 +0200
+@@ -97,7 +97,7 @@
  # The entire set of CFLAGS:
  
--CFLAGS=-O2 -Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-+CFLAGS=$(OPTFLAGS) -Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
- 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
- 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
- 
+ #-ffast-math
+-CFLAGS=-O2 -W -Wall -fno-common -ffloat-store \
++CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
+ 	-Wcast-align -Wredundant-decls \
+ 	-Wbad-function-cast -Wwrite-strings \
+ 	-Waggregate-return \

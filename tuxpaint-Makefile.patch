@@ -1,6 +1,6 @@
---- Makefile.org	Sat Feb  1 00:54:24 2003
-+++ Makefile	Wed Feb 12 09:41:20 2003
-@@ -11,7 +11,7 @@
+--- tuxpaint-0.9.16/Makefile~	2006-10-19 09:41:49.000000000 +0200
++++ tuxpaint-0.9.16/Makefile	2006-10-23 21:50:10.000000000 +0200
+@@ -18,7 +18,7 @@
  
  # Where to install things:
  
@@ -8,13 +8,13 @@
 +PREFIX=$(_prefix)
  
  
- # Program:
-@@ -51,7 +51,7 @@
- X11_ICON_PREFIX=$(PREFIX)/X11R6/include/X11/pixmaps/
- GNOME_PREFIX=`gnome-config --prefix`
- KDE_PREFIX=`kde-config --install apps --expandvars`
--KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
-+#KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
+ # Root directory to place files when creating packages.
+@@ -64,7 +64,7 @@
+ X11_ICON_PREFIX=$(PKG_ROOT)$(PREFIX)/X11R6/include/X11/pixmaps
+ GNOME_PREFIX=`gnome-config --prefix 2> /dev/null`
+ KDE_PREFIX=`kde-config --install apps --expandvars 2> /dev/null`
+-KDE_ICON_PREFIX=`kde-config --install icon --expandvars 2> /dev/null`
++#KDE_ICON_PREFIX=`kde-config --install icon --expandvars 2> /dev/null`
  
  
  # Locale files
