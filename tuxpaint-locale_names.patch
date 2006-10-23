@@ -17,15 +17,18 @@
  	@install -d $(LOCALE_PREFIX)/ro/LC_MESSAGES
 --- tuxpaint-0.9.16/src/tuxpaint.desktop~	2006-10-23 21:15:11.000000000 +0200
 +++ tuxpaint-0.9.16/src/tuxpaint.desktop	2006-10-23 21:22:42.000000000 +0200
-@@ -11,7 +11,7 @@
+@@ -11,9 +11,9 @@
  Name[cy]=Tux Paint
  Name[da]=Tux maling
  Name[de]=Tux Paint
 -Name[en_gb]=Tux Paint
 +Name[en_GB]=Tux Paint
  Name[es]=Tux Paint
- Name[es_mx]=Tux Paint
+-Name[es_mx]=Tux Paint
++Name[es_MX]=Tux Paint
  Name[et]=Joonistame koos Tuksiga!
+ Name[eu]=Tux Paint
+ Name[fi]=Tux Paint
 @@ -36,8 +36,8 @@
  Name[nl]=TuxPaint
  Name[nn]=Tux Paint
@@ -48,15 +51,18 @@
  Type=Application
  Exec=tuxpaint
  Icon=tuxpaint
-@@ -67,7 +67,7 @@
+@@ -67,9 +67,9 @@
  GenericName[cy]=Rhaglen lunio
  GenericName[da]=Tegne program
  GenericName[de]=Malprogramm
 -GenericName[en_gb]=Drawing program
 +GenericName[en_GB]=Drawing program
  GenericName[es]=Programa de dibujo
- GenericName[es_mx]=Programa de dibujo
+-GenericName[es_mx]=Programa de dibujo
++GenericName[es_MX]=Programa de dibujo
  GenericName[et]=Joonistusprogramm
+ GenericName[eu]=Marrazketa programa
+ GenericName[fi]=Piirto-ohjelma
 @@ -93,8 +93,8 @@
  GenericName[nl]=Tekenprogramma
  GenericName[nn]=Teikneprogram
@@ -79,15 +85,18 @@
  Comment=A drawing program for children.
  Comment[af]='n Tekenprogram vir kinders.
  Comment[ar]=.برنامج رسومات للأطفال
-@@ -120,7 +120,7 @@
+@@ -120,9 +120,9 @@
  Comment[cy]=Rhaglen lunio ar gyfer plant.
  Comment[da]=Et tegneprogram for børn.
  Comment[de]=Ein Malprogramm für Kinder.
 -Comment[en_gb]=A drawing program for children.
 +Comment[en_GB]=A drawing program for children.
  Comment[es]=Un programa de dibujo para niños.
- Comment[es_mx]=Un programa de dibujo para niños.
+-Comment[es_mx]=Un programa de dibujo para niños.
++Comment[es_MX]=Un programa de dibujo para niños.
  Comment[et]=Joonistusprogramm lastele.
+ Comment[eu]=Umeentzako marrazketa programa
+ Comment[fi]=Piirto-ohjelma pienille lapsille.
 @@ -145,8 +145,8 @@
  Comment[nb]=Et tegneprogram for de yngste.
  Comment[nl]=Een tekenprogramma voor kinderen.
