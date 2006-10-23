@@ -1,40 +1,38 @@
-diff -burN tuxpaint-0.9.14.orig/Makefile tuxpaint-0.9.14/Makefile
---- tuxpaint-0.9.14.orig/Makefile	2004-11-01 17:31:55.231007520 +0100
-+++ tuxpaint-0.9.14/Makefile	2004-11-01 17:33:21.502892200 +0100
-@@ -213,7 +213,7 @@
+--- tuxpaint-0.9.16/Makefile~	2006-10-23 21:04:47.000000000 +0200
++++ tuxpaint-0.9.16/Makefile	2006-10-23 21:09:31.000000000 +0200
+@@ -376,7 +376,7 @@
  	  rm /usr/share/pixmaps/tuxpaint.png; \
  	fi
  	-if [ "x$(KDE_PREFIX)" != "x" ]; then \
 -	  rm $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
 +	  rm $(KDE_PREFIX)/tuxpaint.desktop; \
  	fi
- 	-rm $(ICON_PREFIX)tuxpaint.png
- 	-rm $(X11_ICON_PREFIX)tuxpaint.xpm
-@@ -336,9 +336,9 @@
+ 	-rm $(ICON_PREFIX)/tuxpaint.png
+ 	-rm $(X11_ICON_PREFIX)/tuxpaint.xpm
+@@ -531,9 +531,9 @@
  	@echo
  	@echo "...Installing launcher icon into KDE..."
  	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
--	  install -d $(KDE_PREFIX)/Graphics; \
--	  cp src/tuxpaint.desktop $(KDE_PREFIX)/Graphics/; \
--	  chmod 644 $(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
+-	  install -d $(PKG_ROOT)$(KDE_PREFIX)/Graphics; \
+-	  cp src/tuxpaint.desktop $(PKG_ROOT)$(KDE_PREFIX)/Graphics/; \
+-	  chmod 644 $(PKG_ROOT)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
 +	  install -d $(KDE_PREFIX); \
 +	  cp src/tuxpaint.desktop $(KDE_PREFIX); \
 +	  chmod 644 $(KDE_PREFIX)/tuxpaint.desktop; \
  	fi
  
  
-diff -burN tuxpaint-0.9.14.orig/src/tuxpaint.desktop tuxpaint-0.9.14/src/tuxpaint.desktop
---- tuxpaint-0.9.14.orig/src/tuxpaint.desktop	2004-11-01 17:31:54.873061936 +0100
-+++ tuxpaint-0.9.14/src/tuxpaint.desktop	2004-11-01 17:37:25.756759968 +0100
-@@ -17,6 +17,7 @@
+--- tuxpaint-0.9.16/src/tuxpaint.desktop~	2006-09-10 20:18:49.000000000 +0200
++++ tuxpaint-0.9.16/src/tuxpaint.desktop	2006-10-23 21:12:45.000000000 +0200
+@@ -35,6 +35,7 @@
  Name[nb]=Tux Paint
  Name[nl]=TuxPaint
  Name[nn]=Tux Paint
 +Name[pl]=Tux Paint
- Name[pt_br]=Tux Paint
+ Name[pt_br]=Pintar
  Name[pt_pt]=Tux Paint
  Name[ru]=Рисуй вместе с Tux!
-@@ -53,6 +54,7 @@
+@@ -91,6 +92,7 @@
  GenericName[nb]=Tegneprogram
  GenericName[nl]=Tekenprogramma
  GenericName[nn]=Teikneprogram
@@ -42,17 +40,9 @@ diff -burN tuxpaint-0.9.14.orig/src/tuxpaint.desktop tuxpaint-0.9.14/src/tuxpain
  GenericName[pt_br]=Programa de desenho
  GenericName[pt_pt]=Programa de desenho
  GenericName[ru]=Программа для рисования
-@@ -86,6 +88,7 @@
- Comment[nb]=Et tegneprogram for de yngste.
- Comment[nl]=Een tekenprogramma voor kinderen.
- Comment[nn]=Eit teikneprogram for dei yngste.
-+Comment[pl]=Tux Paint: prosty program do rysowania dla dzieci.
- Comment[pt_br]=Um programa de desenho para crianças.
- Comment[pt_pt]=Um programa de desenho para crianças.
- Comment[ru]=Детская программа для рисования.
-@@ -96,3 +99,5 @@
+@@ -158,3 +160,5 @@
  Comment[wa]=Programe di dessinaedje po ls efants
  Comment[zh_cn]=孩子的绘图程序。
- Comment[zh_tw]=一個兒童專用的畫圖程式。
+ Comment[zh_tw]=適合兒童的畫圖程式
 +Categories=Education;Art;
 +# vi: set encoding=utf-8
