@@ -61,13 +61,13 @@ Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
 %build
 %{__make} \
 	CC="%{__cc}" \
-	PREFIX=%{_prefix}/ \
-	CONFDIR=%{_sysconfdir}/ \
-	DATA_PREFIX=%{_datadir}/tuxpaint/ \
-	DOC_PREFIX=%{_datadir}/doc/ \
-	ICON_PREFIX=%{_pixmapsdir}/ \
-	X11_ICON_PREFIX=%{_pixmapsdir}/ \
-	LOCALE_PREFIX=%{_datadir}/locale \
+	PREFIX="%{_prefix}" \
+	CONFDIR="%{_sysconfdir}" \
+	DATA_PREFIX="%{_datadir}/tuxpaint" \
+	DOC_PREFIX="%{_datadir}/doc" \
+	ICON_PREFIX="%{_pixmapsdir}" \
+	X11_ICON_PREFIX="%{_pixmapsdir}" \
+	LOCALE_PREFIX="%{_datadir}/locale" \
 	OPTFLAGS="%{rpmcflags}"
 
 %install
