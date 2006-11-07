@@ -118,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/images
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/starters
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 
 %files stamps
