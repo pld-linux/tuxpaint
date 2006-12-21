@@ -52,7 +52,7 @@
  
  msgid "Lavender!"
 -msgstr ""
-+msgstr "Lawenodwy!"
++msgstr "Lawendowy!"
  
 -#, fuzzy
  msgid "Purple!"
@@ -69,7 +69,7 @@
 -#, fuzzy
  msgid "Tan!"
 -msgstr "Cyan!"
-+msgstr "Turkusowy"
++msgstr "Turkusowy!"
  
  msgid "Beige!"
 -msgstr ""
@@ -98,7 +98,7 @@
  
  msgid "Smudge"
 -msgstr ""
-+msgstr "Rozmaż"
++msgstr "Zabruź"
  
  msgid "Lighten"
 -msgstr ""
@@ -164,7 +164,8 @@
  
 -#, fuzzy
  msgid "Click and move the mouse around to smudge the picture."
- msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
+-msgstr "Kliknij i przesuń myszką dookoła, aby rozmazać obrazek."
++msgstr "Kliknij i przesuń myszką dookoła, aby zabrudzić obrazek."
  
  msgid "Click and move to fade the colors."
  msgstr "Kliknij i przesuń myszką, aby kolory zbladły."
@@ -196,7 +197,8 @@
  
 -#, fuzzy
  msgid "Click and move the mouse around to make the picture drip."
- msgstr "Kliknij i przesuń myszką dookoła, aby obraz zaczął ociekać kroplami!"
+-msgstr "Kliknij i przesuń myszką dookoła, aby obraz zaczął ociekać kroplami!"
++msgstr "Kliknij i przesuń myszką dookoła, aby obraz zaczął ociekać kroplami."
  
 -#, fuzzy
  msgid "Click and move the mouse around to turn the picture into a cartoon."
@@ -218,14 +220,13 @@
  
  msgid "Ellipse"
 -msgstr ""
-+msgstr "Elips."
++msgstr "Elipsa"
  
  msgid "Triangle"
  msgstr "Trójkąt"
  
  msgid "Pentagon"
--msgstr "Pięciokąt"
-+msgstr "Pięcioką."
+ msgstr "Pięciokąt"
  
  msgid "Rhombus"
 -msgstr ""
@@ -261,14 +262,17 @@
  
  msgid "Tools"
  msgstr "Narzędzia"
-@@ -323,7 +290,6 @@
+@@ -323,9 +290,8 @@
  msgid "Brushes"
  msgstr "Pędzle"
  
 -#, fuzzy
  msgid "Erasers"
- msgstr "Gumka"
+-msgstr "Gumka"
++msgstr "Gumki"
  
+ msgid "Stamps"
+ msgstr "Pieczęcie"
 @@ -382,11 +348,9 @@
  msgid "Pick a picture to stamp around your drawing."
  msgstr "Wybierz obrazek, aby opieczętować swój rysunek."
