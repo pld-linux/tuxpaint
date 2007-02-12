@@ -1,6 +1,6 @@
 %define		stamps_ver	2006.10.21
 Summary:	Tux Paint - A simple drawing program for children
-Summary(pl.UTF-8):   Tux Paint - Prosty program do rysowania dla dzieci
+Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	0.9.16
 Release:	1
@@ -41,7 +41,7 @@ wskaźnik myszki oraz przyciski utrzymane w stylu komiksowym.
 
 %package stamps
 Summary:	Tux Paint - Collection of "rubber stamp" images
-Summary(pl.UTF-8):   Tux Paint - Kolekcja obrazów z "gumowej pieczątki"
+Summary(pl.UTF-8):	Tux Paint - Kolekcja obrazów z "gumowej pieczątki"
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
