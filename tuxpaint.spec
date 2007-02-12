@@ -1,6 +1,6 @@
 %define		stamps_ver	2006.10.21
 Summary:	Tux Paint - A simple drawing program for children
-Summary(pl):	Tux Paint - Prosty program do rysowania dla dzieci
+Summary(pl.UTF-8):   Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	0.9.16
 Release:	1
@@ -31,25 +31,25 @@ to be fun and easy to use. Sound effects and a cartoon character help
 let the user know what's going on, and keeps them entertained. There
 are also extra-large cartoon-style mouse pointer shapes.
 
-%description -l pl
+%description -l pl.UTF-8
 Tux Paint jest prostym programem rysunkowym dla dzieci (3-10 lat). Nie
-ma on byæ narzêdziem s³u¿±cym ogólnemu celowi nauki rysowania, lecz
-programem ³atwym w u¿yciu, s³u¿±cym zabawie. Efekty d¼wiêkowe i
-komiksowy charakter pomagaj± u¿ytkownikowi w ³atwym poruszaniu siê po
-programie, czyni±c go rozrywkowym. W programie jest tak¿e du¿y
-wska¼nik myszki oraz przyciski utrzymane w stylu komiksowym.
+ma on byÄ‡ narzÄ™dziem sÅ‚uÅ¼Ä…cym ogÃ³lnemu celowi nauki rysowania, lecz
+programem Å‚atwym w uÅ¼yciu, sÅ‚uÅ¼Ä…cym zabawie. Efekty dÅºwiÄ™kowe i
+komiksowy charakter pomagajÄ… uÅ¼ytkownikowi w Å‚atwym poruszaniu siÄ™ po
+programie, czyniÄ…c go rozrywkowym. W programie jest takÅ¼e duÅ¼y
+wskaÅºnik myszki oraz przyciski utrzymane w stylu komiksowym.
 
 %package stamps
 Summary:	Tux Paint - Collection of "rubber stamp" images
-Summary(pl):	Tux Paint - Kolekcja obrazów z "gumowej piecz±tki"
+Summary(pl.UTF-8):   Tux Paint - Kolekcja obrazÃ³w z "gumowej pieczÄ…tki"
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description stamps
 This is a collection of "rubber stamp" images for Tux Paint.
 
-%description stamps -l pl
-Jest to kolekcja obrazów dla Tux Painta zwana "gumowa piecz±tka".
+%description stamps -l pl.UTF-8
+Jest to kolekcja obrazÃ³w dla Tux Painta zwana "gumowa pieczÄ…tka".
 
 %prep
 %setup -q -a 1
