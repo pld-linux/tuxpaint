@@ -1,6 +1,15 @@
---- tuxpaint-0.9.16/Makefile~	2006-10-23 21:15:11.000000000 +0200
-+++ tuxpaint-0.9.16/Makefile	2006-10-23 21:17:55.000000000 +0200
-@@ -876,10 +876,10 @@
+--- tuxpaint-0.9.17/Makefile-i18n~	2007-07-01 03:37:54.000000000 +0200
++++ tuxpaint-0.9.17/Makefile-i18n	2007-07-03 09:06:44.000000000 +0200
+@@ -71,7 +71,7 @@
+ 	-rm $(LOCALE_PREFIX)/nb/LC_MESSAGES/tuxpaint.mo
+ 	-rm $(LOCALE_PREFIX)/nn/LC_MESSAGES/tuxpaint.mo
+ 	-rm $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
+-	-rm $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
++	-rm $(LOCALE_PREFIX)/pt/LC_MESSAGES/tuxpaint.mo
+ 	-rm $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES/tuxpaint.mo
+ 	-rm $(LOCALE_PREFIX)/ro/LC_MESSAGES/tuxpaint.mo
+ 	-rm $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
+@@ -332,10 +332,10 @@
  	@cp trans/pl.mo $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
  	@chmod 644 $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
  	@#
@@ -15,23 +24,34 @@
  	@#
  	@echo "   ro_RO ...Romanian..."
  	@install -d $(LOCALE_PREFIX)/ro/LC_MESSAGES
---- tuxpaint-0.9.16/src/tuxpaint.desktop~	2006-10-23 21:15:11.000000000 +0200
-+++ tuxpaint-0.9.16/src/tuxpaint.desktop	2006-10-23 21:22:42.000000000 +0200
-@@ -11,9 +11,9 @@
- Name[cy]=Tux Paint
+@@ -740,7 +740,7 @@
+ 	@msgfmt -o trans/pl.mo src/po/pl.po
+ 
+ trans/pt_pt.mo:	src/po/pt_pt.po
+-	@echo "   pt_PT ...Portuguese..."
++	@echo "   pt ...Portuguese..."
+ 	@msgfmt -o trans/pt_pt.mo src/po/pt_pt.po
+ 
+ trans/pt_br.mo:	src/po/pt_br.po
+--- tuxpaint-0.9.17/src/tuxpaint.desktop~	2007-07-03 09:05:48.000000000 +0200
++++ tuxpaint-0.9.17/src/tuxpaint.desktop	2007-07-03 09:08:03.000000000 +0200
+@@ -12,10 +12,10 @@
  Name[da]=Tux maling
  Name[de]=Tux Paint
+ Name[el]=Tux Paint
 -Name[en_gb]=Tux Paint
+-Name[en_za]=Tux Paint
 +Name[en_GB]=Tux Paint
++Name[en_ZA]=Tux Paint
  Name[es]=Tux Paint
 -Name[es_mx]=Tux Paint
 +Name[es_MX]=Tux Paint
  Name[et]=Joonistame koos Tuksiga!
  Name[eu]=Tux Paint
  Name[fi]=Tux Paint
-@@ -36,8 +36,8 @@
- Name[nl]=TuxPaint
+@@ -39,8 +39,8 @@
  Name[nn]=Tux Paint
+ Name[nr]=ITux Pende
  Name[pl]=Tux Paint
 -Name[pt_br]=Pintar
 -Name[pt_pt]=Tux Paint
@@ -40,10 +60,10 @@
  Name[ru]=Рисуй вместе с Tux!
  Name[sk]=Tux Paint
  Name[sl]=Tux Paint
-@@ -50,8 +50,8 @@
- Name[uk]=Малюй разом з Tux!
+@@ -57,8 +57,8 @@
  Name[vi]=Tux Sơn
  Name[wa]=Tux Paint
+ Name[xh]=Ipeyinti yeTux
 -Name[zh_cn]=Tux Paint
 -Name[zh_tw]=企鵝小畫家
 +Name[zh_CN]=Tux Paint
@@ -51,21 +71,23 @@
  Type=Application
  Exec=tuxpaint
  Icon=tuxpaint
-@@ -67,9 +67,9 @@
- GenericName[cy]=Rhaglen lunio
+@@ -75,10 +75,10 @@
  GenericName[da]=Tegne program
  GenericName[de]=Malprogramm
+ GenericName[el]=Πρόγραμμα ζωγραφικής
 -GenericName[en_gb]=Drawing program
+-GenericName[en_za]=Drawing program
 +GenericName[en_GB]=Drawing program
++GenericName[en_ZA]=Drawing program
  GenericName[es]=Programa de dibujo
 -GenericName[es_mx]=Programa de dibujo
 +GenericName[es_MX]=Programa de dibujo
  GenericName[et]=Joonistusprogramm
  GenericName[eu]=Marrazketa programa
  GenericName[fi]=Piirto-ohjelma
-@@ -93,8 +93,8 @@
- GenericName[nl]=Tekenprogramma
+@@ -103,8 +103,8 @@
  GenericName[nn]=Teikneprogram
+ GenericName[nr]=Iphrogremu youkudweba
  GenericName[pl]=Program do rysowania
 -GenericName[pt_br]=Programa de desenho
 -GenericName[pt_pt]=Programa de desenho
@@ -74,10 +96,10 @@
  GenericName[ru]=Программа для рисования
  GenericName[sk]=Kresliaci program
  GenericName[sl]=Risarski program
-@@ -107,8 +107,8 @@
- GenericName[uk]=Програма для малювання
+@@ -121,8 +121,8 @@
  GenericName[vi]=Trình vẽ
  GenericName[wa]=Programe di dessinaedje
+ GenericName[xh]=Inkqubo yokuzoba
 -GenericName[zh_cn]=绘图程序
 -GenericName[zh_tw]=畫圖程式
 +GenericName[zh_CN]=绘图程序
@@ -85,22 +107,24 @@
  Comment=A drawing program for children.
  Comment[af]='n Tekenprogram vir kinders.
  Comment[ar]=.برنامج رسومات للأطفال
-@@ -120,9 +120,9 @@
- Comment[cy]=Rhaglen lunio ar gyfer plant.
+@@ -135,10 +135,10 @@
  Comment[da]=Et tegneprogram for børn.
  Comment[de]=Ein Malprogramm für Kinder.
+ Comment[el]=Ένα πρόγραμμα ζωγραφικής για παιδιά.
 -Comment[en_gb]=A drawing program for children.
+-Comment[en_za]=A drawing program for children.
 +Comment[en_GB]=A drawing program for children.
++Comment[en_ZA]=A drawing program for children.
  Comment[es]=Un programa de dibujo para niños.
 -Comment[es_mx]=Un programa de dibujo para niños.
 +Comment[es_MX]=Un programa de dibujo para niños.
  Comment[et]=Joonistusprogramm lastele.
  Comment[eu]=Umeentzako marrazketa programa
  Comment[fi]=Piirto-ohjelma pienille lapsille.
-@@ -145,8 +145,8 @@
- Comment[nb]=Et tegneprogram for de yngste.
- Comment[nl]=Een tekenprogramma voor kinderen.
+@@ -163,8 +163,8 @@
  Comment[nn]=Eit teikneprogram for dei yngste.
+ Comment[nr]=Iphrogremu yokudweba yabantwana.
+ Comment[pl]=Program do rysowania dla dzieci.
 -Comment[pt_br]=Um programa de desenho para crianças
 -Comment[pt_pt]=Um programa de desenho para crianças.
 +Comment[pt_BR]=Um programa de desenho para crianças
@@ -108,13 +132,14 @@
  Comment[ru]=Детская программа для рисования.
  Comment[sk]=Kresliaci program pre deti.
  Comment[sl]=Risarski program za otroke
-@@ -158,7 +158,7 @@
- Comment[tr]=Çocuklar için bir çizim programı
+@@ -180,8 +180,8 @@
  Comment[vi]=Một chương trình vẽ cho đứa bé.
  Comment[wa]=Programe di dessinaedje po ls efants
+ Comment[xh]=Inkqubo yokuzoba yabantwana.
 -Comment[zh_cn]=孩子的绘图程序。
 -Comment[zh_tw]=適合兒童的畫圖程式
 +Comment[zh_CN]=孩子的绘图程序。
 +Comment[zh_TW]=適合兒童的畫圖程式
  Categories=Education;Art;
  # vi: set encoding=utf-8
+ 
