@@ -1,25 +1,24 @@
-%define		stamps_ver	2006.10.21
+%define		stamps_ver	2007.07.01
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
-Version:	0.9.16
-Release:	1
-License:	GPL v2
+Version:	0.9.17
+Release:	0.1
+License:	GPL v2+
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
-# Source0-md5:	467ef64c7f81f9f3755ae2ceebe97f48
+# Source0-md5:	e98e4f1b3421ffcb0e1a1cbbf7c93dc4
 Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
-# Source1-md5:	ea2cc00cf268ad2c59f1f27673e1c0ff
+# Source1-md5:	a7c141bbe146bdb31e6cbad3911ad9a4
 Patch0:		%{name}-Makefile.patch
-Patch1:		%{name}-opt.patch
-Patch2:		%{name}-vfolders.patch
-Patch3:		%{name}-locale_names.patch
-Patch4:		%{name}-pl.patch
+Patch1:		%{name}-vfolders.patch
+Patch2:		%{name}-locale_names.patch
 URL:		http://www.tuxpaint.org/
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.5
 BuildRequires:	gettext-devel
+BuildRequires:	libpaper-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -56,8 +55,6 @@ Jest to kolekcja obrazów dla Tux Painta zwana "gumowa pieczątka".
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 %{__make} \
