@@ -1,19 +1,23 @@
-%define		stamps_ver	2007.07.01
+#
+# TODO
+# - check locale names (I think there is some wrong)
+%define		stamps_ver	2007.11.21
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
-Version:	0.9.17
+Version:	0.9.18
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
-# Source0-md5:	e98e4f1b3421ffcb0e1a1cbbf7c93dc4
+# Source0-md5:	5d1ee8aabfef787702f8ddef257fc1a7
 Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
-# Source1-md5:	a7c141bbe146bdb31e6cbad3911ad9a4
+# Source1-md5:	1a4e032ff67920248931247787f331a1
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-vfolders.patch
 Patch2:		%{name}-locale_names.patch
 URL:		http://www.tuxpaint.org/
+BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.5
@@ -31,10 +35,10 @@ let the user know what's going on, and keeps them entertained. There
 are also extra-large cartoon-style mouse pointer shapes.
 
 %description -l pl.UTF-8
-Tux Paint jest prostym programem rysunkowym dla dzieci (3-10 lat). Nie
-ma on być narzędziem służącym ogólnemu celowi nauki rysowania, lecz
-programem łatwym w użyciu, służącym zabawie. Efekty dźwiękowe i
-komiksowy charakter pomagają użytkownikowi w łatwym poruszaniu się po
+Tux Paint jest prostym programem do rysowania dla dzieci (3-10 lat).
+Nie jest on narzędziem służącym do nauki rysowania, lecz programem
+łatwym w użyciu, służącym zabawie. Efekty dźwiękowe i komiksowy
+charakter pomagają użytkownikowi w łatwym poruszaniu się po
 programie, czyniąc go rozrywkowym. W programie jest także duży
 wskaźnik myszki oraz przyciski utrzymane w stylu komiksowym.
 
@@ -48,7 +52,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 This is a collection of "rubber stamp" images for Tux Paint.
 
 %description stamps -l pl.UTF-8
-Jest to kolekcja obrazów dla Tux Painta zwana "gumowa pieczątka".
+Jest to kolekcja obrazów dla Tux Painta o nazwie "gumowa pieczątka".
 
 %prep
 %setup -q -a 1
@@ -87,7 +91,7 @@ install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 	DATA_PREFIX=$RPM_BUILD_ROOT%{_datadir}/%{name}/
 
 chmod -R a+rwx $RPM_BUILD_ROOT
-rm -rf $RPM_BUILD_ROOT/usr/share/{doc/tuxpaint,gnome/apps,tuxpaint/CVS}
+rm -rf $RPM_BUILD_ROOT%{_datadir}/{doc/tuxpaint,gnome/apps,tuxpaint/CVS}
 
 #rm a lot of unwanted files and directories:
 find docs/ -type d|grep CVS|xargs rm -rf
