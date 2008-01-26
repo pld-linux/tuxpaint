@@ -113,6 +113,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man?/*
 %lang(pl) %{_mandir}/pl/man?/*
 %{_sysconfdir}/tuxpaint.conf
+%dir %{_libdir}/%{name}
+%{_libdir}/%{name}/plugins/
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/brushes
 %{_datadir}/%{name}/fonts
