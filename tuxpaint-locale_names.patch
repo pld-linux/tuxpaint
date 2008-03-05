@@ -135,14 +135,11 @@
  Comment[ru]=Детская программа для рисования.
  Comment[sk]=Kresliaci program pre deti.
  Comment[sl]=Risarski program za otroke
-@@ -189,8 +189,8 @@
- Comment[wa]=On programe di dessinaedje po ls efants.
- Comment[wo]=Lël lu natal yu ñu jagglel guneyi.
- Comment[xh]=Inkqubo yokuzoba yabantwana.
--Comment[zh_cn]=孩子的绘图程序。
--Comment[zh_tw]=適合兒童的畫圖程式
-+Comment[zh_CN]=孩子的绘图程序。
-+Comment[zh_TW]=適合兒童的畫圖程式
- Categories=Education;Art;
- # vi: set encoding=utf-8
- 
+@@ -205,3 +205,7 @@
+ Comment[zh_CN]=孩子的绘图程序。
+ Comment[zh_TW]=適合兒童的畫圖程式
+ Comment[zw]=Diif program paar keé men Dibuj paar biét biss
++Categories=Education;Art;
++# vi: set encoding=utf-8
++
++

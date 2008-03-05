@@ -44,13 +44,3 @@
  	fi
  
  
---- tuxpaint-0.9.17/src/tuxpaint.desktop~	2007-05-09 09:46:21.000000000 +0200
-+++ tuxpaint-0.9.17/src/tuxpaint.desktop	2007-07-03 08:52:39.000000000 +0200
-@@ -182,3 +182,7 @@
- Comment[xh]=Inkqubo yokuzoba yabantwana.
- Comment[zh_cn]=孩子的绘图程序。
- Comment[zh_tw]=適合兒童的畫圖程式
-+Categories=Education;Art;
-+# vi: set encoding=utf-8
-+
-+
