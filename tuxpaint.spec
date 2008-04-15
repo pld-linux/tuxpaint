@@ -1,6 +1,4 @@
 #
-# TODO
-# - check locale names (I think there is some wrong)
 %define		stamps_ver	2008.03.01
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
@@ -9,9 +7,9 @@ Version:	0.9.19
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
-Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
 # Source0-md5:	b030a20615743639360327c5af04063b
-Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
+Source1:	http://downloads.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
 # Source1-md5:	81bfb61ff7ffc467d9812f2336377c51
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-vfolders.patch
@@ -23,6 +21,7 @@ BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.5
 BuildRequires:	gettext-devel
 BuildRequires:	libpaper-devel
+BuildRequires:	librsvg-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
