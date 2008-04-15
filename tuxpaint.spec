@@ -87,7 +87,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_d
 install src/tuxpaint.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 
-%{__make} -C %{name}-stamps-%{stamps_ver} install \
+%{__make} -C %{name}-stamps-%{stamps_ver} install-all \
 	DATA_PREFIX=$RPM_BUILD_ROOT%{_datadir}/%{name}/
 
 chmod -R a+rwx $RPM_BUILD_ROOT
