@@ -1,17 +1,25 @@
+# TODO:
+# - some files are not packaged:
+#   /usr/include/tuxpaint/tp_magic_api.h
+#   /usr/share/doc/tuxpaint-dev/Makefile
+#   /usr/share/doc/tuxpaint-dev/README.txt
+#   /usr/share/doc/tuxpaint-dev/html/README.html
+#   /usr/share/doc/tuxpaint-dev/tp_magic_example.c
+# - some locales are not included
 #
-%define		stamps_ver	2008.03.01
+%define		stamps_ver	2008.06.30
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
-Version:	0.9.19
+Version:	0.9.20
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
-Source0:	http://downloads.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
-# Source0-md5:	b030a20615743639360327c5af04063b
-Source1:	http://downloads.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
-# Source1-md5:	81bfb61ff7ffc467d9812f2336377c51
+Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
+# Source0-md5:	87d335ee1193b516d3cd50546ce2bf1b
+Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
+# Source1-md5:	9c84055a582698587c085a0f5a9dab0a
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-vfolders.patch
 Patch2:		%{name}-locale_names.patch
@@ -38,9 +46,9 @@ are also extra-large cartoon-style mouse pointer shapes.
 Tux Paint jest prostym programem do rysowania dla dzieci (3-10 lat).
 Nie jest on narzędziem służącym do nauki rysowania, lecz programem
 łatwym w użyciu, służącym zabawie. Efekty dźwiękowe i komiksowy
-charakter pomagają użytkownikowi w łatwym poruszaniu się po
-programie, czyniąc go rozrywkowym. W programie jest także duży
-wskaźnik myszki oraz przyciski utrzymane w stylu komiksowym.
+charakter pomagają użytkownikowi w łatwym poruszaniu się po programie,
+czyniąc go rozrywkowym. W programie jest także duży wskaźnik myszki
+oraz przyciski utrzymane w stylu komiksowym.
 
 %package stamps
 Summary:	Tux Paint - Collection of "rubber stamp" images
@@ -64,6 +72,7 @@ Jest to kolekcja obrazów dla Tux Painta o nazwie "gumowa pieczątka".
 %{__make} \
 	CC="%{__cc}" \
 	PREFIX="%{_prefix}" \
+	MAGIC_PREFIX="%{_libdir}/%{name}/plugins" \
 	CONFDIR="%{_sysconfdir}" \
 	DATA_PREFIX="%{_datadir}/tuxpaint" \
 	DOC_PREFIX="%{_datadir}/doc" \
@@ -78,6 +87,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/%{name},%{_pixmapsdir},%{_d
 
 %{__make} install \
 	_prefix=$RPM_BUILD_ROOT%{_prefix}/ \
+	MAGIC_PREFIX=$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins \
 	CONFDIR=$RPM_BUILD_ROOT%{_sysconfdir}/ \
 	MAN_PREFIX=$RPM_BUILD_ROOT%{_mandir}/ \
 	GNOME_PREFIX=$RPM_BUILD_ROOT%{_prefix}/ \
@@ -92,6 +102,17 @@ install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 
 chmod -R a+rwx $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT%{_datadir}/{doc/tuxpaint,gnome/apps,tuxpaint/CVS}
+
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
+
+# don't know what to do with some locales - removed for now
+rm -rf \
+	$RPM_BUILD_ROOT%{_datadir}/locale/bo \
+	$RPM_BUILD_ROOT%{_datadir}/locale/en_ZA \
+	$RPM_BUILD_ROOT%{_datadir}/locale/gos \
+	$RPM_BUILD_ROOT%{_datadir}/locale/oj \
+	$RPM_BUILD_ROOT%{_datadir}/locale/twi \
+	$RPM_BUILD_ROOT%{_datadir}/locale/zw
 
 #rm a lot of unwanted files and directories:
 find docs/ -type d|grep CVS|xargs rm -rf
@@ -118,6 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/brushes
 %{_datadir}/%{name}/fonts
+%{_datadir}/%{name}/im
 %{_datadir}/%{name}/images
 %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/starters
