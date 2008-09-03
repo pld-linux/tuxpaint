@@ -1,14 +1,14 @@
---- tuxpaint-0.9.17/Makefile~	2007-07-03 08:44:39.000000000 +0200
-+++ tuxpaint-0.9.17/Makefile	2007-07-03 08:49:33.000000000 +0200
-@@ -441,14 +441,14 @@
- 
+--- tuxpaint-0.9.20/Makefile	2008-09-03 14:56:33.000000000 +0000
++++ tuxpaint-0.9.20/Makefile	2008-09-03 15:06:25.000000000 +0000
+@@ -511,14 +511,14 @@
+ .PHONY: uninstall
  uninstall:	uninstall-i18n
  	-if [ "x$(GNOME_PREFIX)" != "x" ]; then \
--	  rm $(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
+-	  rm $(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
 +	  rm $(GNOME_PREFIX)/share/gnome/apps/tuxpaint.desktop; \
  	  rm $(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
  	else \
--	  rm /usr/share/gnome/apps/Graphics/tuxpaint.desktop; \
+-	  rm /usr/share/applications/tuxpaint.desktop; \
 +	  rm /usr/share/gnome/apps/tuxpaint.desktop; \
  	  rm /usr/share/pixmaps/tuxpaint.png; \
  	fi
@@ -18,29 +18,29 @@
  	fi
  	-rm $(ICON_PREFIX)/tuxpaint.png
  	-rm $(X11_ICON_PREFIX)/tuxpaint.xpm
-@@ -512,9 +512,9 @@
- 	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/pixmaps; \
- 	 cp data/images/icon.png $(PKG_ROOT)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
- 	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
--	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
--	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/; \
--	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/Graphics/tuxpaint.desktop; \
-+	 install -d $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/; \
-+	 cp src/tuxpaint.desktop $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/; \
-+	 chmod 644 $(PKG_ROOT)$(GNOME_PREFIX)/share/gnome/apps/tuxpaint.desktop; \
+@@ -588,9 +588,9 @@
+ 	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps; \
+ 	 cp data/images/icon.png $(DESTDIR)/$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+ 	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps/tuxpaint.png; \
+-	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/applications; \
+-	 cp src/tuxpaint.desktop $(DESTDIR)$(GNOME_PREFIX)/share/applications/; \
+-	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/applications/tuxpaint.desktop; \
++	 install -d $(DESTDIR)$(GNOME_PREFIX)/share/gnome/apps/; \
++	 cp src/tuxpaint.desktop $(DESTDIR)$(GNOME_PREFIX)/share/gnome/apps/; \
++	 chmod 644 $(DESTDIR)$(GNOME_PREFIX)/share/gnome/apps/tuxpaint.desktop; \
  	fi
  
  
-@@ -549,9 +549,9 @@
+@@ -625,9 +625,9 @@
  	@echo
  	@echo "...Installing launcher icon into KDE..."
  	@if [ "x$(KDE_PREFIX)" != "x" ]; then \
--	  install -d $(PKG_ROOT)$(KDE_PREFIX)/Graphics; \
--	  cp src/tuxpaint.desktop $(PKG_ROOT)$(KDE_PREFIX)/Graphics/; \
--	  chmod 644 $(PKG_ROOT)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
-+	  install -d $(KDE_PREFIX); \
-+	  cp src/tuxpaint.desktop $(KDE_PREFIX); \
-+	  chmod 644 $(KDE_PREFIX)/tuxpaint.desktop; \
+-	  install -d $(DESTDIR)$(KDE_PREFIX)/Graphics; \
+-	  cp src/tuxpaint.desktop $(DESTDIR)$(KDE_PREFIX)/Graphics/; \
+-	  chmod 644 $(DESTDIR)$(KDE_PREFIX)/Graphics/tuxpaint.desktop; \
++	 install -d $(KDE_PREFIX); \
++	 cp src/tuxpaint.desktop $(KDE_PREFIX); \
++	 chmod 644 $(KDE_PREFIX)/tuxpaint.desktop; \
  	fi
  
- 
+ .PHONY: install-kde-icons

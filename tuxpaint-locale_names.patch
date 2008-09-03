@@ -1,157 +1,34 @@
---- tuxpaint-0.9.18/Makefile-i18n~	2007-11-10 01:43:28.000000000 +0100
-+++ tuxpaint-0.9.18/Makefile-i18n	2007-12-07 00:31:24.000000000 +0100
-@@ -74,7 +74,7 @@
- 	-rm $(LOCALE_PREFIX)/nr/LC_MESSAGES/tuxpaint.mo
- 	-rm $(LOCALE_PREFIX)/oj/LC_MESSAGES/tuxpaint.mo
- 	-rm $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
--	-rm $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
-+	-rm $(LOCALE_PREFIX)/pt/LC_MESSAGES/tuxpaint.mo
- 	-rm $(LOCALE_PREFIX)/pt_BR/LC_MESSAGES/tuxpaint.mo
- 	-rm $(LOCALE_PREFIX)/ro/LC_MESSAGES/tuxpaint.mo
- 	-rm $(LOCALE_PREFIX)/ru/LC_MESSAGES/tuxpaint.mo
-@@ -348,10 +348,10 @@
- 	@cp trans/pl.mo $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
- 	@chmod 644 $(LOCALE_PREFIX)/pl/LC_MESSAGES/tuxpaint.mo
- 	@#
--	@echo "   pt_PT ...Portuguese (Portugal)..."
--	@install -d $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES
--	@cp trans/pt_pt.mo $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
--	@chmod 644 $(LOCALE_PREFIX)/pt_PT/LC_MESSAGES/tuxpaint.mo
-+	@echo "   pt ...Portuguese (Portugal)..."
-+	@install -d $(LOCALE_PREFIX)/pt/LC_MESSAGES
-+	@cp trans/pt_pt.mo $(LOCALE_PREFIX)/pt/LC_MESSAGES/tuxpaint.mo
-+	@chmod 644 $(LOCALE_PREFIX)/pt/LC_MESSAGES/tuxpaint.mo
- 	@#
- 	@echo "   ro_RO ...Romanian..."
- 	@install -d $(LOCALE_PREFIX)/ro/LC_MESSAGES
-@@ -780,7 +780,7 @@
- 	@msgfmt -o trans/pl.mo src/po/pl.po
- 
- trans/pt_pt.mo:	src/po/pt_pt.po
--	@echo "   pt_PT ...Portuguese..."
-+	@echo "   pt ...Portuguese..."
- 	@msgfmt -o trans/pt_pt.mo src/po/pt_pt.po
- 
- trans/pt_br.mo:	src/po/pt_br.po
---- tuxpaint-0.9.18/src/tuxpaint.desktop~	2007-12-07 00:25:18.000000000 +0100
-+++ tuxpaint-0.9.18/src/tuxpaint.desktop	2007-12-07 00:48:59.000000000 +0100
-@@ -12,13 +12,13 @@
- Name[da]=Tux maling
- Name[de]=Tux Paint
- Name[el]=Tux Paint
--Name[en_au]=Tux Paint
--Name[en_ca]=Tux Paint
--Name[en_gb]=Tux Paint
--Name[en_za]=Tux Paint
-+Name[en_AU]=Tux Paint
-+Name[en_CA]=Tux Paint
-+Name[en_GB]=Tux Paint
-+Name[en_ZA]=Tux Paint
- Name[eo]=Tux-Desegnilo
- Name[es]=Tux Paint
--Name[es_mx]=Tux Paint
-+Name[es_MX]=Tux Paint
- Name[et]=Joonistame koos Tuksiga!
- Name[eu]=Tux Paint
- Name[fi]=Tux Paint
-@@ -41,8 +41,8 @@
- Name[nn]=Tux Paint
- Name[nr]=ITux Pende
+--- tuxpaint-0.9.20/src/tuxpaint.desktop	2008-06-27 20:15:41.000000000 +0000
++++ tuxpaint-0.9.20/src/tuxpaint.desktop	2008-09-03 15:15:22.000000000 +0000
+@@ -49,7 +49,7 @@
+ Name[oc]=Tux Paint
  Name[pl]=Tux Paint
--Name[pt_br]=Tux Paint
--Name[pt_pt]=Tux Paint
-+Name[pt_BR]=Tux Paint
+ Name[pt_BR]=Tux Paint
+-Name[pt_PT]=Tux Paint
 +Name[pt]=Tux Paint
  Name[ru]=Рисуй вместе с Tux!
- Name[sk]=Tux Paint
+ Name[sk]=Kreslenie s Tuxom
  Name[sl]=Tux Paint
-@@ -60,8 +60,8 @@
- Name[wa]=Tux Paint
- Name[wo]=Tux Paint
- Name[xh]=Ipeyinti yeTux
--Name[zh_cn]=Tux Paint
--Name[zh_tw]=企鵝小畫家
-+Name[zh_CN]=Tux Paint
-+Name[zh_TW]=企鵝小畫家
- Name[zw]=Tux Paint
- Type=Application
- Exec=tuxpaint
-@@ -78,13 +78,13 @@
- GenericName[da]=Tegne program
- GenericName[de]=Malprogramm
- GenericName[el]=Πρόγραμμα ζωγραφικής
--GenericName[en_au]=Drawing program
--GenericName[en_ca]=Drawing program
--GenericName[en_gb]=Drawing program
--GenericName[en_za]=Drawing program
-+GenericName[en_AU]=Drawing program
-+GenericName[en_CA]=Drawing program
-+GenericName[en_GB]=Drawing program
-+GenericName[en_ZA]=Drawing program
- GenericName[eo]=Desegnoprogramo
- GenericName[es]=Programa de dibujo
--GenericName[es_mx]=Programa de dibujo
-+GenericName[es_MX]=Programa de dibujo
- GenericName[et]=Joonistusprogramm
- GenericName[eu]=Marrazketa programa
- GenericName[fi]=Piirto-ohjelma
-@@ -108,8 +108,8 @@
- GenericName[nn]=Teikneprogram
- GenericName[nr]=Iphrogremu youkudweba
+@@ -125,7 +125,7 @@
+ GenericName[oc]=Logicial de dessenh
  GenericName[pl]=Program do rysowania
--GenericName[pt_br]=Programa de desenho
--GenericName[pt_pt]=Programa de desenho
-+GenericName[pt_BR]=Programa de desenho
+ GenericName[pt_BR]=Programa de desenho
+-GenericName[pt_PT]=Programa de desenho
 +GenericName[pt]=Programa de desenho
  GenericName[ru]=Программа для рисования
  GenericName[sk]=Kresliaci program
  GenericName[sl]=Risarski program
-@@ -127,8 +127,8 @@
- GenericName[wa]=Programe di dessinaedje
- GenericName[wo]=Lëlu natal
- GenericName[xh]=Inkqubo yokuzoba
--GenericName[zh_cn]=绘图程序
--GenericName[zh_tw]=畫圖程式
-+GenericName[zh_CN]=绘图程序
-+GenericName[zh_TW]=畫圖程式
- GenericName[zw]=Diif program paar keé men Dibuj
- Comment=A drawing program for children.
- Comment[af]='n Tekenprogram vir kinders.
-@@ -141,13 +141,13 @@
- Comment[da]=Et tegneprogram for børn.
- Comment[de]=Ein Malprogramm für Kinder.
- Comment[el]=Ένα πρόγραμμα ζωγραφικής για παιδιά.
--Comment[en_au]=A drawing program for children.
--Comment[en_ca]=A drawing program for children.
--Comment[en_gb]=A drawing program for children.
--Comment[en_za]=A drawing program for children.
-+Comment[en_au]=A drawing program for children.
-+Comment[en_ca]=A drawing program for children.
-+Comment[en_GB]=A drawing program for children.
-+Comment[en_ZA]=A drawing program for children.
- Comment[eo]=Desegnoprogramo por infanoj
- Comment[es]=Un programa de dibujo para niños.
--Comment[es_mx]=Un programa de dibujo para niños.
-+Comment[es_MX]=Un programa de dibujo para niños.
- Comment[et]=Joonistusprogramm lastele.
- Comment[eu]=Umeentzako marrazketa programa
- Comment[fi]=Piirto-ohjelma pienille lapsille.
-@@ -171,8 +171,8 @@
- Comment[nn]=Eit teikneprogram for dei yngste.
+@@ -195,7 +195,7 @@
  Comment[nr]=Iphrogremu yokudweba yabantwana.
  Comment[pl]=Program do rysowania dla dzieci.
--Comment[pt_br]=Um programa de desenho para crianças.
--Comment[pt_pt]=Um programa de desenho para crianças.
-+Comment[pt_BR]=Um programa de desenho para crianças.
+ Comment[pt_BR]=Um programa de desenho para crianças.
+-Comment[pt_PT]=Um programa de desenho para crianças.
 +Comment[pt]=Um programa de desenho para crianças.
  Comment[ru]=Детская программа для рисования.
  Comment[sk]=Kresliaci program pre deti.
  Comment[sl]=Risarski program za otroke
-@@ -205,3 +205,7 @@
+@@ -216,3 +216,4 @@
  Comment[zh_CN]=孩子的绘图程序。
  Comment[zh_TW]=適合兒童的畫圖程式
  Comment[zw]=Diif program paar keé men Dibuj paar biét biss
 +Categories=Education;Art;
-+# vi: set encoding=utf-8
-+
-+
