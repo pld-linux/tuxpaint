@@ -1,0 +1,11 @@
+--- tuxpaint-0.9.21/Makefile~	2009-06-29 13:37:20.000000000 +0200
++++ tuxpaint-0.9.21/Makefile	2009-06-29 13:38:37.000000000 +0200
+@@ -832,7 +832,7 @@
+ 		$(ARCH_LIBS)
+ 	@echo
+ 	@echo "...Linking Tux Paint..."
+-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
++	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(LDFLAGS) $(DEFS) \
+ 		-o tuxpaint $^ \
+ 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
+ 	@$(RSRC_CMD)
