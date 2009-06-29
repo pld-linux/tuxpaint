@@ -7,30 +7,33 @@
 #   /usr/share/doc/tuxpaint-dev/tp_magic_example.c
 # - some locales are not included
 #
-%define		stamps_ver	2008.06.30
+%define		stamps_ver	2009.06.28
 Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
-Version:	0.9.20
+Version:	0.9.21
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
 Source0:	http://dl.sourceforge.net/tuxpaint/%{name}-%{version}.tar.gz
-# Source0-md5:	87d335ee1193b516d3cd50546ce2bf1b
+# Source0-md5:	a88401d1860648098eeed819cff038fa
 Source1:	http://dl.sourceforge.net/tuxpaint/%{name}-stamps-%{stamps_ver}.tar.gz
-# Source1-md5:	9c84055a582698587c085a0f5a9dab0a
+# Source1-md5:	06ceccd22074bdbf95c7c8776f7f49a9
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-vfolders.patch
 Patch2:		%{name}-locale_names.patch
+Patch3:		%{name}-ldflags.patch
 URL:		http://www.tuxpaint.org/
 BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_image-devel >= 1.2.2
 BuildRequires:	SDL_mixer-devel >= 1.2.4
 BuildRequires:	SDL_ttf-devel >= 2.0.5
+BuildRequires:	fribidi-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libpaper-devel
 BuildRequires:	librsvg-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -67,6 +70,7 @@ Jest to kolekcja obrazów dla Tux Painta o nazwie "gumowa pieczątka".
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__make} \
@@ -79,7 +83,8 @@ Jest to kolekcja obrazów dla Tux Painta o nazwie "gumowa pieczątka".
 	ICON_PREFIX="%{_pixmapsdir}" \
 	X11_ICON_PREFIX="%{_pixmapsdir}" \
 	LOCALE_PREFIX="%{_datadir}/locale" \
-	OPTFLAGS="%{rpmcflags}"
+	OPTFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -103,18 +108,19 @@ install data/images/icon48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tuxpaint.png
 chmod -R a+rwx $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT%{_datadir}/{doc/tuxpaint,gnome/apps,tuxpaint/CVS}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
-
 # don't know what to do with some locales - removed for now
 rm -rf \
 	$RPM_BUILD_ROOT%{_datadir}/locale/bo \
 	$RPM_BUILD_ROOT%{_datadir}/locale/en_ZA \
 	$RPM_BUILD_ROOT%{_datadir}/locale/gos \
 	$RPM_BUILD_ROOT%{_datadir}/locale/oj \
+	$RPM_BUILD_ROOT%{_datadir}/locale/shs \
+	$RPM_BUILD_ROOT%{_datadir}/locale/son \
 	$RPM_BUILD_ROOT%{_datadir}/locale/twi \
+	$RPM_BUILD_ROOT%{_datadir}/locale/zam \
 	$RPM_BUILD_ROOT%{_datadir}/locale/zw
 
-#rm a lot of unwanted files and directories:
+# rm a lot of unwanted files and directories:
 find docs/ -type d|grep CVS|xargs rm -rf
 find docs/ -name "[KC]OP*" -exec rm -f "{}" ";"
 find docs/ -name "INS*" -exec rm -f "{}" ";"
