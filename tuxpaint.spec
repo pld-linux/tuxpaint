@@ -6,6 +6,7 @@
 #   /usr/share/doc/tuxpaint-dev/html/README.html
 #   /usr/share/doc/tuxpaint-dev/tp_magic_example.c
 # - some locales are not included
+# - separate stamps to make them noarch
 #
 %define		stamps_ver	2009.06.28
 Summary:	Tux Paint - A simple drawing program for children
@@ -34,6 +35,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	libpaper-devel
 BuildRequires:	librsvg-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -71,6 +73,7 @@ Jest to kolekcja obrazów dla Tux Painta o nazwie "gumowa pieczątka".
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+install -d trans
 
 %build
 %{__make} \
