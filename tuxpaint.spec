@@ -13,7 +13,7 @@ Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	0.9.21
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
@@ -25,6 +25,7 @@ Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-vfolders.patch
 Patch2:		%{name}-locale_names.patch
 Patch3:		%{name}-ldflags.patch
+Patch4:		%{name}-libpng15.patch
 URL:		http://www.tuxpaint.org/
 BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_image-devel >= 1.2.2
@@ -73,6 +74,7 @@ Jest to kolekcja obrazów dla Tux Painta o nazwie "gumowa pieczątka".
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 install -d trans
 
 %build
