@@ -13,7 +13,7 @@ Summary:	Tux Paint - A simple drawing program for children
 Summary(pl.UTF-8):	Tux Paint - Prosty program do rysowania dla dzieci
 Name:		tuxpaint
 Version:	0.9.21
-Release:	5
+Release:	6
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Graphics

@@ -17,12 +17,10 @@
  				   PNG_sRGB_INTENT_PERCEPTUAL);
 --- tuxpaint-0.9.21/Makefile~	2012-02-11 11:14:52.538332123 +0100
 +++ tuxpaint-0.9.21/Makefile	2012-02-11 11:19:26.806386279 +0100
-@@ -72,8 +72,7 @@
- ARCH_LIBS:=$($(OS)_ARCH_LIBS)
+@@ -72,7 +72,6 @@
  
  PAPER_LIB:=$(call linktest,-lpaper,)
--PNG:=$(call linktest,-lpng,)
-+PNG:=$(call linktest,-lpng15,)
+ PNG:=$(call linktest,-lpng,)
 -PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
  
  FRIBIDI_LIB:=$(shell pkg-config --libs fribidi)
